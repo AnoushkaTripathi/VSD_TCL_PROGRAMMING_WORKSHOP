@@ -1,0 +1,71 @@
+#!/bin/tcsh -f
+
+# ============================================================
+#                   MonkSynth Automation Tool
+# ------------------------------------------------------------
+#  Author : Er. Anoushka Tripathi
+#  Company: MONK9 Tech Private Limited
+#  Description:
+#     Open-source automation tool for synthesis using TCL scripting.
+#     It takes RTL + SDC as input and generates synthesized netlist
+#     and pre-layout timing report using Yosys & OpenTimer.
+# ============================================================
+
+# Display banner
+echo "\n\n\n\t\t\t\t\tMonkSynth\n"
+echo "\t\tThis is an open-source automation tool created by Er. Anoushka Tripathi"
+echo "\t\tfrom MONK9 Tech Private Limited for synthesis using TCL scripting.\n"
+
+echo "       ***********************************************"
+echo "       *                                             *"
+echo "       *                 M O N K 9                   *"
+echo "       *                                             *"
+echo "       ***********************************************\n"
+
+echo "An interactive tool that takes RTL netlist and SDC constraints as input,"
+echo "and generates a synthesized netlist and pre-layout timing report as output.\n"
+echo "It uses Yosys (open-source synthesis tool) and OpenTimer for timing analysis.\n"
+
+# ------------------------------------------------------------
+#               Command-Line Argument Handling
+# ------------------------------------------------------------
+
+# Check if exactly one argument (CSV file) is provided
+if ($#argv != 1) then
+    echo "MonkSynth Info: Please provide the CSV file."
+    echo "USAGE: ./monksynth <csv file>"
+    exit 1
+endif
+
+set file = "$argv[1]"
+
+# Display help message
+if ("$file" == "-help") then
+    echo "USAGE: ./monksynth <csv file>"
+    echo "CSV file must contain the following fields:"
+    echo "  Design Name, Output Directory, Netlist Directory, Library Path, Constraint File"
+    echo "Note: Field names are case-sensitive."
+    exit 0
+endif
+
+# Check if the provided file exists
+if (! -f "$file") then
+    echo "MonkSynth Error: Cannot find CSV file '$file' in current directory."
+    echo "Exiting the flow..."
+    exit 1
+endif
+
+# ------------------------------------------------------------
+#                   Launch TCL Synthesis
+# ------------------------------------------------------------
+
+echo "\nStarting MonkSynth Flow..."
+echo "Reading configuration from: $file\n"
+
+tclsh MonkSynth.tcl "$file"
+
+echo "\nFlow completed successfully!"
+echo "------------------------------------------------------------"
+echo "Generated outputs available in the configured output directory."
+echo "------------------------------------------------------------\n"
+
