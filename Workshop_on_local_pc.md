@@ -56,5 +56,11 @@ It involves:
 6. **Execution:**
    Passing the generated synthesis script to **Yosys** for running the synthesis process.
 
+<img width="1852" height="639" alt="image" src="https://github.com/user-attachments/assets/f5ffceb1-1ea3-4a28-8f35-10a2134ead86" />
 
+<img width="1277" height="945" alt="image" src="https://github.com/user-attachments/assets/a12a82c0-9163-4014-b8c7-200947806707" />
+
+<img width="1277" height="945" alt="image" src="https://github.com/user-attachments/assets/b1b0c6a8-71bd-4a01-987e-5916ac9afdc1" />
+
+## Day 3: Mapping openMSP430_design_constraints.csv file to format[1] compatible with Yosys(open source EDA tool) for Synthesis
 
