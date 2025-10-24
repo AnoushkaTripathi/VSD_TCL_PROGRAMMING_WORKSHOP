@@ -72,3 +72,16 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 
 <img width="1857" height="1000" alt="image" src="https://github.com/user-attachments/assets/79c30bc9-e0f0-4bcb-8d6e-0442c18527ce" />
 
+<img width="1857" height="1000" alt="image" src="https://github.com/user-attachments/assets/891a149f-a55a-48ba-8983-cdbfe755ebf2" />
+
+<img width="1845" height="992" alt="image" src="https://github.com/user-attachments/assets/a0e28ed2-7543-4f4f-9833-b817e514bbb6" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1825d128-6282-4ac1-8216-a4dc4d08ba83" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cde80a2a-d14b-4146-b01b-be6167974b40" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/463162c3-3d38-491b-87c7-bb1f38b7af33" />
+
+
+
+
