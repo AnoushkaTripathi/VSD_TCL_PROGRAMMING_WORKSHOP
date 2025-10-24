@@ -82,6 +82,8 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/463162c3-3d38-491b-87c7-bb1f38b7af33" />
 
+## DAY-4 : Feeding RTL Netlist and Standard Cell Library to Yosys EDA tool for Synthesis
 
-
+### Checking the hierarchy
+#### case 1 : All the referenced modules are interlinked properly and the hierarchy is properly defined - Hierarchy PASS
 
