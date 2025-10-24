@@ -85,5 +85,15 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 ## DAY-4 : Feeding RTL Netlist and Standard Cell Library to Yosys EDA tool for Synthesis
 
 ### Checking the hierarchy
-#### case 1 : All the referenced modules are interlinked properly and the hierarchy is properly defined - Hierarchy PASS
+####  All the referenced modules are interlinked properly and the hierarchy is properly defined - Hierarchy PASS
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a506f81-4b73-4f77-9d5e-7bc461fc1ddd" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3e4f3c6-aa5e-4577-88c4-75851898346d" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5118afa5-324a-4823-8ce9-a5eecc3a0e70" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fbe0fb28-7f84-486a-82a7-e6090fdc3364" />
+
+## DAY-5: Converting Yosys tool's Synthesized Gate Level Output Netlist to a Format compatible with Opentimer(Open Source EDA Tool) for Timing Analysis
 
