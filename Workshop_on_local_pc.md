@@ -13,3 +13,11 @@ user doesnot provide the .csv file
 
 ### Scenario 2:
 user provides the name of .csv file but it doesnot exist 
+<img width="1173" height="610" alt="image" src="https://github.com/user-attachments/assets/f7acd089-40f0-46ed-bfb4-b1f8a50f3afc" />
+
+### Scenario 3:
+user requests for help regarding the excel sheet content and execution using --help 
+<img width="1271" height="643" alt="image" src="https://github.com/user-attachments/assets/e9d8d06e-2cd6-48b6-b3a1-9abc7fc4d554" />
+
+## Creating CSV File
+<img width="1271" height="643" alt="image" src="https://github.com/user-attachments/assets/443ae576-1fa9-450f-bb47-4da1b0bfe43a" />
