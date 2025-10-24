@@ -97,3 +97,12 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 
 ## DAY-5: Converting Yosys tool's Synthesized Gate Level Output Netlist to a Format compatible with Opentimer(Open Source EDA Tool) for Timing Analysis
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/886d0c4f-2fe5-4b09-8093-c9708187e602" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d9b845cc-4633-439a-865b-491d1372bc12" />
+
+### Traking no of * & //// in openMSP430.synth.v
+
+<img width="806" height="289" alt="image" src="https://github.com/user-attachments/assets/b8ce99b2-1651-41b8-bd96-75265f7ece0a" />
+
+<img width="1847" height="354" alt="image" src="https://github.com/user-attachments/assets/61ddb4c5-60ad-4ed0-b014-085718945c8b" />
