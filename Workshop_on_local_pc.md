@@ -106,3 +106,7 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 <img width="806" height="289" alt="image" src="https://github.com/user-attachments/assets/b8ce99b2-1651-41b8-bd96-75265f7ece0a" />
 
 <img width="1847" height="354" alt="image" src="https://github.com/user-attachments/assets/61ddb4c5-60ad-4ed0-b014-085718945c8b" />
+
+# Final result
+
+<img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/8765e7ee-aa23-4821-b165-5fd243d190e9" />
