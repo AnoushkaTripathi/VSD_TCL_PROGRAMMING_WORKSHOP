@@ -64,3 +64,11 @@ It involves:
 
 ## Day 3: Mapping openMSP430_design_constraints.csv file to format[1] compatible with Yosys(open source EDA tool) for Synthesis
 
+### Clock latency and transition constraints
+
+Get all the parameters under "CLOCKS",get row and column number and traverse using them.
+
+<img width="1857" height="1000" alt="image" src="https://github.com/user-attachments/assets/b1f5728b-3070-4e7b-a24a-f9a0b72b4aae" />
+
+<img width="1857" height="1000" alt="image" src="https://github.com/user-attachments/assets/79c30bc9-e0f0-4bcb-8d6e-0442c18527ce" />
+
