@@ -21,3 +21,40 @@ user requests for help regarding the excel sheet content and execution using --h
 
 ## Creating CSV File
 <img width="1271" height="643" alt="image" src="https://github.com/user-attachments/assets/443ae576-1fa9-450f-bb47-4da1b0bfe43a" />
+
+
+Source the UNIX shell to tcl script by passing the csv file
+```
+tclsh my_synth.tcl $argv[1]
+
+```
+<img width="1343" height="677" alt="image" src="https://github.com/user-attachments/assets/4e49fea0-b561-4cc8-96c1-99abe72130dc" />
+
+# DAY 2 Automated Design Setup and Synthesis Flow Initialization in MonkSynth
+
+### **Task Description:**
+
+This phase of **MonkSynth** focuses on preparing and validating all design inputs before synthesis.
+
+It involves:
+
+1. **Variable Extraction:**
+   Creating TCL-accessible variables by reading paths and parameters from the CSV configuration file.
+
+2. **Input Validation:**
+   Checking existence of directories and files defined in the CSV (Netlist, Libraries, Constraints).
+
+3. **Constraint Processing:**
+   Reading the constraint file entry in CSV and converting it into proper **SDC format**.
+
+4. **Netlist Parsing:**
+   Reading and listing all Verilog files from the specified netlist directory.
+
+5. **Script Generation:**
+   Dynamically generating the **main synthesis TCL script (format-2)** with correct paths and flow structure.
+
+6. **Execution:**
+   Passing the generated synthesis script to **Yosys** for running the synthesis process.
+
+
+
