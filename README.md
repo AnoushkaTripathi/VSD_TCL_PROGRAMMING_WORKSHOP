@@ -1,6 +1,189 @@
 # VSD_TCL_PROGRAMMING_WORKSHOP
 
-## DAY1  Creating a TCL command and pass .csv file from UNIX shell to tcl script
+## DAY 1:  Creating a TCL command and pass .csv file from UNIX shell to tcl script
+
+## Objective
+
+The goal of this day is to **understand how a TCL-based automation flow can process design data from an Excel/CSV input**, synthesize it using **Yosys**, and perform **timing analysis with OpenTimer** — all wrapped inside the **VSDSYNTH Toolbox**.
+
+
+## Concept Overview
+
+| Component | Role |
+|------------|------|
+| 🧾 **Input CSV/Excel** | Contains design and constraint details |
+| ⚙️ **VSDSYNTH (TCL Box)** | Processes CSV input, runs synthesis and timing tools |
+| 🕒 **Output Reports** | Synthesized netlist, SDCs, and timing results |
+
+
+
+## Example Input Sheet
+
+| Design Name | Output Dir | Netlist Dir | Early Lib | Late Lib | Constraints File |
+|--------------|-------------|--------------|------------|-----------|------------------|
+| top_design   | ./out       | ./netlist    | early.lib  | late.lib  | constraints.csv  |
+
+> The **CSV** acts as an input file.  
+> **VSDSYNTH (TCL script)** acts as the processor.  
+> The **output** includes timing data and reports.
+
+
+
+## VSDSYNTH Toolbox Flow
+
+###  Launch the VSDSYNTH Toolbox
+```bash
+./vsdsynth input.csv
+````
+
+* Opens the synthesis **toolbox shell**
+* Accepts the `.csv` as an argument
+* Runs synthesis + timing flow
+* Dumps generated SDC files
+* Outputs:
+
+  * Synthesized netlist
+  * Timing reports
+
+
+
+##  Subtasks and Required Tools
+
+###  Step 1: Build Command Interface
+
+Create a command `vsdsynth` that:
+
+* Accepts a `.csv` file from the UNIX shell
+* Passes it as an argument to the TCL script
+
+```bash
+vsdsynth input.csv
+```
+
+
+
+###  Step 2: Convert Inputs for Synthesis
+
+Convert the CSV contents into:
+
+* **Format [1]**: Synthesis-compatible format
+* **SDC constraints**: Standard format used by Yosys
+
+These are then passed to the synthesis tool **Yosys** for netlist generation.
+
+
+
+### Step 3: Convert for Timing Analysis
+
+* **Format [2]**: Timing tool–specific format
+* Pass netlist, liberty paths, and timing constraints to **OpenTimer**
+
+```bash
+OpenTimer Commands:
+  read_liberty early.lib late.lib
+  read_verilog synthesized.v
+  read_sdc constraints.sdc
+  report_timing > timing_report.txt
+```
+
+The constraints are processed from CSV → SDC → OpenTimer inputs, identifying buses, ports, and timing conditions.
+
+
+###  Step 4: Generate Output Report
+
+Final results include:
+
+*  Synthesized netlist
+* Timing report (slack, setup, hold)
+* Auto-generated SDC files
+
+
+## VSDSYNTH Toolbox Usage Scenarios
+
+### Scenario 1: No CSV Input Provided
+
+When the user forgets to give an input file:
+
+```bash
+./vsdsynth
+```
+
+Output:
+
+```
+Error: No input file provided.
+Usage: ./vsdsynth <input.csv>
+```
+
+ Uses `$argc` and `$argv` in TCL to check the number of arguments.
+If `$argc != 1`, script exits with an error.
+
+```tcl
+if { $argc != 1 } {
+    puts "Usage: ./vsdsynth <input.csv>"
+    exit 1
+}
+```
+
+
+###  Scenario 2: CSV File Does Not Exist
+
+If the provided CSV file path is invalid:
+
+```bash
+./vsdsynth myfile.csv
+```
+
+Output:
+
+```
+Error: Input file myfile.csv not found!
+```
+
+ Script checks file existence before proceeding.
+
+
+
+###  Scenario 3: Help Option
+
+To check usage and supported options:
+
+```bash
+./vsdsynth -help
+```
+
+Output:
+
+```
+Usage: ./vsdsynth <input.csv>
+Description: Automates synthesis and timing analysis using Yosys and OpenTimer.
+```
+
+
+### Permissions
+
+Before running:
+
+```bash
+chmod -R 777 vsdsynth
+```
+
+This gives execute permission to the script.
+
+
+
+##  Summary
+
+| Step | Process                               | Tool Used |
+| ---- | ------------------------------------- | --------- |
+| 1    | Read & validate CSV input             | TCL       |
+| 2    | Convert constraints to SDC            | TCL       |
+| 3    | Run synthesis                         | Yosys     |
+| 4    | Run timing analysis                   | OpenTimer |
+| 5    | Generate timing and synthesis reports | TCL       |
+
+
+
 
 <img width="1390" height="705" alt="image" src="https://github.com/user-attachments/assets/1d80afb3-0ee1-446d-a149-0f77a66e6e62" />
 <img width="1390" height="705" alt="image" src="https://github.com/user-attachments/assets/69f630fb-1a29-4c02-b101-3397f670b793" />
