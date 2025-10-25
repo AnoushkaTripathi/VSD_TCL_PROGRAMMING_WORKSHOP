@@ -195,7 +195,6 @@ A negative slack indicates a timing violation.
 <img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/3e14da56-475d-46cb-ba9c-bca16b362225" />
 
 <img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/649db072-9868-41b7-957b-f475beeeb5e7" />
-<img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/dcf0f34a-cfad-4cd1-9cde-7ef340771fed" />
 <img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/48bd4217-5e04-4e53-955b-d5cad4328896" />
 
 <img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/a33fb569-a992-4f02-8912-3d408a2c5754" />
@@ -203,5 +202,8 @@ A negative slack indicates a timing violation.
 
 
 # Final result
+
+<img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/dcf0f34a-cfad-4cd1-9cde-7ef340771fed" />
+
 
 <img width="1917" height="1069" alt="image" src="https://github.com/user-attachments/assets/8765e7ee-aa23-4821-b165-5fd243d190e9" />
