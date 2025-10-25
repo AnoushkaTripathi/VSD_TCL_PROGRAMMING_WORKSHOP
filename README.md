@@ -68,6 +68,30 @@ It involves:
 
 ## Day 3: Mapping openMSP430_design_constraints.csv file to format[1] compatible with Yosys(open source EDA tool) for Synthesis
 
+The goal is to process timing constraints directly from the CSV input file, interpret clock specifications, identify input signals (both single-bit and buses), and generate corresponding Synopsys Design Constraint (SDC) entries.
+
+You will learn to:
+
+- Parse and categorize data from the constraints.csv file.
+
+- Create clock definitions with accurate period, duty cycle, and latency.
+
+- Extract bus information from Verilog netlists using regular expressions.
+
+- Differentiate between bit-level and bus-level constraints.
+
+- Generate set_input_delay and set_clock_latency commands automatically.
+
+## Conceptual Background
+
+Clocks and IO timing form the backbone of any STA environment.
+The accuracy of clock period, latency, and input arrival times directly affects the synthesized design’s performance.
+This lab builds the automation logic that allows VSDSYNTH to:
+
+Read CSV → create structured matrices → locate “CLOCKS” → compute waveform equations.
+
+Translate design intent into tool-readable SDC commands.
+
 ### Clock latency and transition constraints
 
 Get all the parameters under "CLOCKS",get row and column number and traverse using them.
@@ -88,6 +112,27 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 
 ## DAY-4 : Feeding RTL Netlist and Standard Cell Library to Yosys EDA tool for Synthesis
 
+###  **Lab Objective**
+
+Day 4 extends the Day 3 flow to cover **output constraints** and **integration with the Yosys synthesis tool**.
+Here, we will finalize SDC generation and use it to synthesize an RTL design into a gate-level netlist.
+
+You will:
+
+* Add `set_output_delay` and `set_load` commands to the SDC file.
+* Understand how the SDC is consumed by synthesis tools.
+* Create an automated Yosys script (`synth.ys`) using TCL variables.
+* Execute synthesis and verify successful gate-level netlist generation.
+* Implement hierarchy checks and error-handling in TCL.
+
+---
+
+### 🧠 **Conceptual Background**
+
+Synthesis is the process of converting behavioral RTL code into a structural gate-level representation using liberty models.
+By feeding the generated SDC into Yosys, you ensure that synthesis honors timing constraints.
+Day 4 bridges the gap between **functional design intent (RTL)** and **implementation design intent (timing)**.
+
 ### Checking the hierarchy
 ####  All the referenced modules are interlinked properly and the hierarchy is properly defined - Hierarchy PASS
 
@@ -100,6 +145,42 @@ Get all the parameters under "CLOCKS",get row and column number and traverse usi
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fbe0fb28-7f84-486a-82a7-e6090fdc3364" />
 
 ## DAY-5: Converting Yosys tool's Synthesized Gate Level Output Netlist to a Format compatible with Opentimer(Open Source EDA Tool) for Timing Analysis
+
+### 🎯 **Lab Objective**
+
+Day 5 is where all components come together.
+You’ll automate the **entire design flow**:
+CSV → SDC → Yosys → OpenTimer → QoR Report.
+
+The focus is on:
+
+* Creating OpenTimer configuration files (`.conf`).
+* Running static timing analysis automatically.
+* Parsing OpenTimer timing reports to extract QoR metrics:
+
+  * WNS (Worst Negative Slack)
+  * TNS (Total Negative Slack)
+  * Setup/Hold violations
+  * Instance count & runtime
+* Formatting these metrics into readable tables and logs.
+
+---
+
+
+Here, the TCL script becomes a *flow controller*, capable of:
+
+* Launching synthesis and analysis tools.
+* Managing data dependencies between stages.
+* Evaluating timing performance quantitatively.
+
+**OpenTimer** performs the timing graph analysis using liberty, Verilog, and SDC inputs, applying standard STA principles:
+
+```
+Slack = Required_Time – Arrival_Time
+```
+
+A negative slack indicates a timing violation.
+
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/886d0c4f-2fe5-4b09-8093-c9708187e602" />
 
