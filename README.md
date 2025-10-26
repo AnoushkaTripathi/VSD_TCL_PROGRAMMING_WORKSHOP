@@ -1,5 +1,7 @@
 # VSD_TCL_PROGRAMMING_WORKSHOP
 
+<img width="1920" height="1078" alt="image" src="https://github.com/user-attachments/assets/6cec53dc-69d5-4241-ba8d-5e9f875dfded" />
+
 ## DAY 1:  Creating a TCL command and pass .csv file from UNIX shell to tcl script
 
 ## Objective
